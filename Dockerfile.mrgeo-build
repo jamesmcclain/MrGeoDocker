@@ -1,0 +1,5 @@
+FROM jamesmcclain/hadoop:8u111
+MAINTAINER James McClain <james.mcclain@gmail.com>
+
+RUN apt-get update && apt-get install -y libgdal-java libopencv2.4-java
+RUN apt-get install -y maven

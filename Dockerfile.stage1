@@ -1,0 +1,4 @@
+FROM jamesmcclain/mrgeo:stage0
+MAINTAINER James McClain <james.mcclain@gmail.com>
+
+RUN apt-get install -y maven

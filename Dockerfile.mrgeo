@@ -1,0 +1,8 @@
+FROM jamesmcclain/mrgeo:stage0
+MAINTAINER James McClain <james.mcclain@gmail.com>
+
+ENV MRGEO_COMMON_HOME /opt/mrgeo
+ENV MRGEO_CONF_DIR ${MRGEO_COMMON_HOME}/conf
+ENV PATH ${PATH}:${MRGEO_COMMON_HOME}/bin:/opt/hadoop-2.7.2/bin
+
+ADD mrgeo.tar.gz ${MRGEO_COMMON_HOME}

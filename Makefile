@@ -1,3 +1,5 @@
+.PHONY: stage0 stage1 mrgeo
+
 MRGEO_VERSION := 1.2.0-SNAPSHOT
 MRGEO_SHA := 2e5d735938e829dfb7e0b70e512183629f791792
 SHA := $(shell echo ${MRGEO_SHA} | sed 's,\(.......\).*,\1,')
@@ -6,10 +8,10 @@ GDAL_VERSION := 1.10.1
 
 all: mrgeo
 
-.PHONY stage0:
+stage0:
 	docker build -f Dockerfile.stage0 -t jamesmcclain/mrgeo:stage0 .
 
-.PHONY stage1:
+stage1:
 	docker build -f Dockerfile.stage1 -t jamesmcclain/mrgeo:stage1 .
 
 archives/${MRGEO_SHA}.zip:
@@ -29,5 +31,5 @@ mrgeo-${MRGEO_SHA}/distribution/distribution-tgz/target/mrgeo-${MRGEO_VERSION}.t
 mrgeo.tar.gz: mrgeo-${MRGEO_SHA}/distribution/distribution-tgz/target/mrgeo-${MRGEO_VERSION}.tar.gz
 	cp -f $< $@
 
-.PHONY mrgeo: mrgeo.tar.gz
+mrgeo: mrgeo.tar.gz
 	docker build -f Dockerfile.mrgeo -t  jamesmcclain/mrgeo:${SHA} .

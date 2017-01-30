@@ -1,7 +1,7 @@
 .PHONY: stage0 stage1 mrgeo
 
 MRGEO_VERSION := 1.2.0-SNAPSHOT
-MRGEO_SHA := 2e5d735938e829dfb7e0b70e512183629f791792
+MRGEO_SHA := 0c6ed4a7e66bb0923ec5c570b102862aee9e885e
 SHA := $(shell echo ${MRGEO_SHA} | sed 's,\(.......\).*,\1,')
 DIST_ARCHIVE := archives/${MRGEO_SHA}.zip
 GDAL_VERSION := 1.10.1

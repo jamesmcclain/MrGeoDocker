@@ -1,5 +1,5 @@
 MRGEO_VERSION := 1.2.0-SNAPSHOT
-MRGEO_SHA := 239f4d401f873c88c1082f734ffabdcdffe2330f
+MRGEO_SHA := 2e5d735938e829dfb7e0b70e512183629f791792
 SHA := $(shell echo ${MRGEO_SHA} | sed 's,\(.......\).*,\1,')
 DIST_ARCHIVE := archives/${MRGEO_SHA}.zip
 GDAL_VERSION := 1.10.1

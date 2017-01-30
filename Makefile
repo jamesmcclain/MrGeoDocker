@@ -31,5 +31,8 @@ mrgeo-${MRGEO_SHA}/distribution/distribution-tgz/target/mrgeo-${MRGEO_VERSION}.t
 mrgeo.tar.gz: mrgeo-${MRGEO_SHA}/distribution/distribution-tgz/target/mrgeo-${MRGEO_VERSION}.tar.gz
 	cp -f $< $@
 
-mrgeo: mrgeo.tar.gz
+javax.servlet-api-3.1.0.jar:
+	cp -f $(HOME)/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar $@
+
+mrgeo: mrgeo.tar.gz javax.servlet-api-3.1.0.jar
 	docker build -f Dockerfile.mrgeo -t  jamesmcclain/mrgeo:${SHA} .

@@ -6,3 +6,4 @@ ENV MRGEO_CONF_DIR ${MRGEO_COMMON_HOME}/conf
 ENV PATH ${PATH}:${MRGEO_COMMON_HOME}/bin:/opt/hadoop-2.7.2/bin
 
 ADD mrgeo.tar.gz ${MRGEO_COMMON_HOME}
+ADD javax.servlet-api-3.1.0.jar ${MRGEO_COMMON_HOME}/lib

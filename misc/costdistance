@@ -1,0 +1,2 @@
+srcPoint = [/mrgeo/vectors/points.shp];
+result = CostDistance(srcPoint, [friction], 30000);
